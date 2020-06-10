@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ACADÈMICA</title>
+    <meta name="description" content="">
+    <!-- responsive tag -->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,Academica">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.html">
+   
+    <link rel="shortcut icon" type="image/x-icon" href="~/Design/image.png">
+
+    
+    <link href="~/Design/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Design/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Design/css/animate.css" rel="stylesheet" />
+    <link href="~/Design/css/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Design/css/slick.css" rel="stylesheet" />
+    <link href="~/Design/css/rsmenu-main.css" rel="stylesheet" />
+    <link href="~/Design/css/rsmenu-transitions.css" rel="stylesheet" />
+    <link href="~/Design/css/magnific-popup.css" rel="stylesheet" />
+    <link href="~/Design/fonts/flaticon.css" rel="stylesheet" />
+    <link href="~/Design/fonts/fonts2/flaticon.css" rel="stylesheet" />
+    <link href="~/Design/style.css" rel="stylesheet" />
+    <link href="~/Design/css/responsive.css" rel="stylesheet" />
+
+
+</head>
+<body class="home1">
+
+    @*<div class="full-width-header">
+        <!-- Toolbar Start -->
+        <div class="rs-toolbar col-xs-0 d-none d-lg-block home3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="rs-toolbar-left">
+                            <div class="welcome-message">
+                                <i class="glyph-icon flaticon-placeholder"></i>
+                                <span>Academica Bilaspur, CG</span>
+                            </div>
+                            <div class="welcome-message">
+                                <i class="glyph-icon flaticon-phone-call"></i>
+                                <span><a href="tel:1234567890">+1234-567-890</a></span>
+                            </div>
+                            <div class="welcome-message">
+                                <i class="glyph-icon flaticon-email"></i>
+                                <span><a href="academica.h.e@gmail.com">academica.h.e@gmail.com</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="rs-toolbar-right">
+                            <div class="toolbar-share-icon">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                            <a href="@Url.Action("Login","Account")" class="apply-btn">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Toolbar End -->
+        <!--Header Start-->
+        
+        <!--Header End-->
+    </div>*@
+
+    <div>
+        @RenderBody()
+
+    </div>
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+    <footer id="rs-footer" class="bg3 rs-footer">
+        <div class="container">
+            <!-- Footer Address -->
+            <div>
+                <div class="row footer-contact-desc">
+                    <div class="col-md-4">
+                        <div class="contact-inner">
+                            <i class="fa fa-map-marker"></i>
+                            <h4 class="contact-title">Address</h4>
+                            <p class="contact-desc">
+                                C.M.D. Chowk, Near Apollo City Centre,  <br>
+                                Bilaspur, Chhattisgarh
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-inner">
+                            <i class="fa fa-phone"></i>
+                            <h4 class="contact-title">Phone Number</h4>
+                            <p class="contact-desc">
+                                Mob.: 62619-99320, 7470598768<br>
+                               Ph : 07752-412300
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-inner">
+                            <i class="fa fa-map-marker"></i>
+                            <h4 class="contact-title">Email Address</h4>
+                            <p class="contact-desc">
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=academica.h.e@gmail.com">academica.h.e@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Top -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="about-widget">
+                            <a href="@Url.Action("Index","Home")"><img src="~/Design/image.png" alt="logo" style="height:80px;">&nbsp; <b style="font-size:xx-large;color:white">ACADÈMICA</b></a>
+
+                            <p style="text-align:justify"><b>ACADÈMICA</b> higher education is best structured institution complete in all aspects known for the preperation of IIT-JEE (Main & Advance). NEET + AIIMS , NTES, Olympiads and other entranc exams such as IIT-JAM, JEST, TIFR (for graduate students).</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-12">
+                        <h5 class="footer-title">OUR SITEMAP</h5>
+                        <ul class="sitemap-widget">
+                            <li class="active"><a href="@Url.Action("Index","Home")"><i class="fa fa-angle-right" aria-hidden="true"></i>Home</a></li>
+                            <li><a href="@Url.Action("About","Home")"><i class="fa fa-angle-right" aria-hidden="true"></i>About</a></li>
+                            <li><a href="@Url.Action("Faculty","Home")"><i class="fa fa-angle-right" aria-hidden="true"></i>Faculties</a></li>
+                            <li><a href="@Url.Action("Contact","Home")"><i class="fa fa-angle-right" aria-hidden="true"></i>Contact</a></li>
+                            <li><a href="@Url.Action("Gallery", "Home")"><i class="fa fa-angle-right" aria-hidden="true"></i>Gallery</a></li>
+
+                        </ul>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-12">
+
+                        <img src="~/Design/academicanew.jpg" />
+                        @*<div class="recent-post-widget">
+                            <div class="post-item">
+                                <div class="post-date">
+                                    <span>30</span>
+                                    <span>November</span>
+                                </div>
+                                <div class="post-desc">
+                                    <h5 class="post-title"><a href="#">While the lovely valley team work</a></h5>
+                                    <span class="post-category">Keyword Analysis</span>
+                                </div>
+                            </div>
+                            <div class="post-item">
+                                <div class="post-date">
+                                    <span>02</span>
+                                    <span>December</span>
+                                </div>
+                                <div class="post-desc">
+                                    <h5 class="post-title"><a href="#">I must explain to you how all this idea</a></h5>
+                                    <span class="post-category">Spoken English</span>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+
+                   
+                </div>
+                <div class="footer-share">
+                    <ul>
+                        <li title="Facebook"><a href="https://www.facebook.com/Academica-Higher-Education-104101101105415/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li title="Youtube"><a href="https://www.youtube.com/channel/UCqvy40sNsRDx-dKJOGGsyDg" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                        <li title="Instagram"><a href="https://www.instagram.com/academicahighereducation/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        <li title="Linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>© 2019 ACADÈMICA. All Rights Reserved. Developed By- <a href="http://www.awizomtech.com/" target="_blank" style="color:#0094ff">Awizom Tech Bytes Pvt. Ltd. Raipur</a></p> 
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="~/Design/js/modernizr-2.8.3.min.js"></script>
+    <script src="~/Design/js/jquery.min.js"></script>
+    <script src="~/Design/js/bootstrap.min.js"></script>
+    <script src="~/Design/js/owl.carousel.min.js"></script>
+    <script src="~/Design/js/slick.min.js"></script>
+    <script src="~/Design/js/isotope.pkgd.min.js"></script>
+    <script src="~/Design/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/Design/js/wow.min.js"></script>
+    <script src="~/Design/js/waypoints.min.js"></script>
+    <script src="~/Design/js/jquery.counterup.min.js"></script>
+    <script src="~/Design/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Design/js/rsmenu-main.js"></script>
+    <script src="~/Design/js/plugins.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgC6ZapXdUzFdeQOFhdm_wucwlDMMQ8CQ"></script>
+    <script src="~/Design/js/main.js"></script>
+
+
+
+</body>
+</html>

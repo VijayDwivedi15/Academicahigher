@@ -1,0 +1,109 @@
+﻿@model EducationSite.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Log in";
+    Layout = "";
+}
+
+
+<head>
+    <title>ACADÈMICA, Bilaspur</title>
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Academics, Education Site, Bilaspur">
+    <link rel="shortcut icon" type="image/x-icon" href="~/Design/image.png">
+
+    <script>
+        addEventListener("load",function() {
+            setTimeout(hideURLbar,0);
+        },false);
+
+        function hideURLbar() {
+            window.scrollTo(0,1);
+        }
+    </script>
+    <!-- //Meta-Tags -->
+    <!-- Stylesheets -->
+
+    <link href="~/LoginDesign/css/style.css" rel="stylesheet" />
+
+    <link href="//fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <!--//online fonts-->
+</head>
+
+
+
+<body>
+ 
+    <div class="w3ls-login box" style="height:100%">
+        <img src="~/LoginDesign/images/logo.png" alt="logo_img" />
+        <!-- form starts here -->
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+             @Html.AntiForgeryToken()
+            
+               @Html.ValidationSummary(true)
+            <form action="#" method="post">
+                <div class="agile-field-txt">
+                    <input type="text" name="UserName" id="UserName" placeholder=" Enter UserName" required="" />
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </div>
+                <div class="agile-field-txt">
+                    <input type="password" name="Password" id="Password" placeholder="Enter Password" required="" />
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+                <div class="w3ls-bot">
+                    <input type="submit" value="LOGIN">
+                </div>
+            </form>
+        }
+    </div>
+    <!-- //form ends here -->
+    <!--copyright-->
+    <!--//copyright-->
+</body>
+
+
+
+
+@*<div class="row">
+        <div class="col-md-8">
+
+            <section id="loginForm">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    @Html.ValidationSummary(true)
+                    <div class="form-group">
+                        <div class="agile-field-txt">
+                            <input type="text" name="UserName" id="UserName" placeholder=" Enter UserName" required="" />
+                            @Html.ValidationMessageFor(m => m.UserName)
+                        </div>
+
+
+
+                    </div>
+                    <div class="form-group">
+                        <div class="agile-field-txt">
+                            <input type="password" name="Password" id="Password" placeholder="Enter Password" required=""  />
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>
+
+                    </div>
+
+                  <div class="w3ls-bot">
+                    <input type="submit" value="LOGIN">
+                </div>
+                    <p>
+                        @Html.ActionLink("Register", "Register") if you don't have a local account.
+                    </p>
+                }
+            </section>
+        </div>
+
+    </div>*@
+
+

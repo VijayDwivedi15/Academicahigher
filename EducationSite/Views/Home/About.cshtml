@@ -1,0 +1,194 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<header id="rs-header" class="rs-header">
+
+    <!-- Menu Start -->
+    <div class="menu-area menu-sticky">
+        <div class="container">
+            <div class="main-menu">
+                <div class="row rs-vertical-middle">
+                    <div class="col-lg-5 col-md-12">
+                        <div class="logo-area">
+                            <a href="@Url.Action("Index","Home")"><img src="~/Design/image.png" alt="logo" style="height:80px;"> &nbsp;&nbsp;<b style="font-size:xx-large;color:white">ACADÈMICA</b></a>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-12">
+                        <div class="main-menu">
+                            <a class="rs-menu-toggle"><i class="fa fa-bars"></i>Menu</a>
+                            <nav class="rs-menu">
+                                <ul class="nav-menu">
+                                    <!-- Home -->
+                                    <li class=" menu-item-has-children">
+                                        <a href="@Url.Action("Index","Home")" class="home" style="font-weight:bold">Home</a>
+                                    </li>
+
+                                    <li class="current-menu-item current_page_item menu-item-has-children">
+                                        <a href="@Url.Action("About","Home")" style="font-weight:bold">About Us</a>
+                                    </li>
+
+                                    <li class="menu-item-has-children">
+                                        <a href="@Url.Action("Faculty","Home")" style="font-weight:bold">Faculty List</a>
+                                    </li>
+
+                                    <li class="menu-item-has-children">
+                                        <a href="@Url.Action("Gallery","Home")" style="font-weight:bold">Gallery</a>
+
+                                    </li>
+
+                                    <li> <a href="@Url.Action("Contact","Home")" style="font-weight:bold">Contact</a></li>
+
+                                </ul>
+                            </nav>
+                            @*<div class="searce-box">
+                                    <a class="rs-search" data-target=".search-modal" data-toggle="modal" href="#"><i class="fa fa-search"></i></a>
+                                </div>*@
+                        </div>
+                        <div class="toggle-btn text-right">
+                            <span class="border-icon"></span>
+                            <span class="border-icon"></span>
+                            <span class="border-icon"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu End -->
+</header>
+
+<div class="rs-breadcrumbs bg7 breadcrumbs-overlay">
+    <div class="breadcrumbs-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="page-title">About Us</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="rs-history sec-spacer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 rs-vertical-bottom mobile-mb-50">
+                <a href="#">
+                    <img src="~/Design/images/about/history.jpg" alt="History Image" />
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="abt-title">
+                    <h2>About ACADÈMICA</h2>
+                </div>
+                <div class="about-desc">
+                    <p style="text-align:justify">
+                        <b>ACADÈMICA</b>aims at grooming the professionals; who would carry forward the spirit of scientific thinking and serve as a valuable resource for industry and society. We undertake collaborative projects which offer opportunities for long-term interaction with academia and industry.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="rs-mission sec-color sec-spacer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mobile-mb-50">
+                <div class="abt-title">
+                    <h2>OUR MISSION</h2>
+                </div>
+                <div class="about-desc">
+                    <p style="text-align:justify">
+                        Focus on practical aspects of the course material so as to make learning a meaningful and interesting experience in our intellectually stimulating campus.<br />
+                        Create an environment with people having similar goals and aspirations to be visionaries.<br />
+                        Actively encourage collaboration with industries, communities and the fellow institutions in the country and abroad. <br />
+                        Work to inculcate high moral and ethical values amongst the students to make them responsible citizens and good human beings.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="row">
+                    <div class="col-md-6 mobile-mb-30">
+                        <a href="#">
+                            <img src="~/Design/images/about/mission1.jpg" alt="Mission Image" />
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#">
+                            <img src="~/Design/images/about/mission2.jpg" alt="Mission Image" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="rs-vision sec-spacer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mobile-mb-50">
+                <div class="vision-img rs-animation-hover">
+                    <img src="~/Design/images/about/vision.jpg" alt="img02" />
+                    <a class="popup-youtube rs-animation-fade" href="https://www.youtube.com/watch?v=3f9CAMoj3Ec" title="Video Icon">
+                    </a>
+                    <div class="overly-border"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="abt-title">
+                    <h2>OUR VISION</h2>
+                </div>
+                <div class="vision-desc">
+                    <p style="text-align:justify">Provide widely recognized leadership in the improvement of teaching, learning, and the assessment of educational outcomes across the life span through research, scholarship, and technology.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="rs-calltoaction" class="rs-calltoaction sec-spacer bg4">
+    <div class="container">
+        <div class="rs-cta-inner text-center">
+            <div class="sec-title mb-50 text-center">
+                <h2 class="white-color">Education &amp; Achivements</h2>
+                <p class="white-color">A literate and educated citizenry is vital to a democratic society.</p>
+            </div>
+            <a class="cta-button" href="@Url.Action("Contact","Home")">Join Now</a>
+        </div>
+    </div>
+</div>
+
+<br /><br /><br /><br />
+
+@*<div id="rs-partner" class="rs-partner pt-70 pb-70">
+        <div class="container">
+            <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="80" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
+                <div class="partner-item">
+                    <a href="#"><img src="~/Design/images/partner/1.png" alt="Partner Image"></a>
+                </div>
+                <div class="partner-item">
+                    <a href="#"><img src="~/Design/images/partner/2.png" alt="Partner Image"></a>
+                </div>
+                <div class="partner-item">
+                    <a href="#"><img src="~/Design/images/partner/3.png" alt="Partner Image"></a>
+                </div>
+                <div class="partner-item">
+                    <a href="#"><img src="~/Design/images/partner/4.png" alt="Partner Image"></a>
+                </div>
+                <div class="partner-item">
+                    <a href="#"><img src="~/Design/images/partner/5.png" alt="Partner Image"></a>
+                </div>
+            </div>
+        </div>
+    </div>*@

@@ -1,0 +1,84 @@
+﻿@model EducationSite.Models.Gallery
+@using EducationSite.Models;
+@{
+    ViewBag.Title = "AddGallery";
+}
+
+<div class="col-sm-12 col-md-12" style="margin-top:10px;margin-left:10px;">
+    <a href="@Url.Action("Index", "Admin", new { area="Admin"})" class="btn btn-info float-right btn-rounded"> Home</a>
+</div>
+
+<div class="content-wrapper">
+    <div class="col-12 grid-margin">
+        <center style="margin-top:20px;font-size:x-large;text-decoration:underline;color:#0094ff"><span><b>Add Gallery</b></span></center><br />
+        <div class="card">
+            <div class="card-body">
+
+
+                @using (Html.BeginForm("AddGallery", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", id = "AddGallery", role = "form", area = "Admin" }))
+                {
+                    <form class="form-sample">
+
+                        <br />
+                        <div class="row">
+                            @if (Model != null)
+                            {
+                                <input type="text" value="@Model.GalleryID" id="GalleryID" name="GalleryID" style="display:none" />
+
+                            }
+                            else
+                            {
+                                <input type="text" value="0" id="GalleryID" name="GalleryID" style="display:none" />
+                            }
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label" style="font-weight:bold">Name</label>
+                                    <div class="col-sm-8">
+                                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control mb-2 mr-sm-2", @id = "Title", @placeholder = "Enter Title ", required = "" })
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label" style="font-weight:bold">Photos</label>
+                                    <div class="col-sm-8">
+                                        <input type="file" class="btn btn-default waves-effect form-control" required="" id="Images" name="Images" multiple placeholder="Upload Image" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            
+
+
+
+
+
+                        </div>
+                        @if (Model != null)
+                        {
+                            <input type="text" id="imgdynamic" name="ImagSource" value="@Model.Images" style="display:none" />
+                        }
+                        else
+                        {
+                            <input type="text" id="imgdynamic" name="ImagSource" class="hidden" style="display:none" />
+
+                        }
+                        <center><button type="submit" class="btn btn-primary" id="btnsubmit" style="width:150px;">Submit</button></center>
+
+                        <br />
+
+
+
+                    </form>
+
+                }
+
+            </div>
+        </div>
+    </div>
+
+</div>

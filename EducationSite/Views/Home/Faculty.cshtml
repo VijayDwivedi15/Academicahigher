@@ -1,0 +1,207 @@
+﻿@model EducationSite.Models.AddFaculty
+@using EducationSite.Models;
+@using EducationSite.DAL
+
+@{
+    ViewBag.Title = "Faculty";
+    List<AddFaculty> fac = ViewData["faculty"] as List<AddFaculty>;
+}
+
+<header id="rs-header" class="rs-header">
+
+    <!-- Menu Start -->
+    <div class="menu-area menu-sticky">
+        <div class="container">
+            <div class="main-menu">
+                <div class="row rs-vertical-middle">
+                    <div class="col-lg-5 col-md-12">
+                        <div class="logo-area">
+                            <a href="@Url.Action("Index","Home")"><img src="~/Design/image.png" alt="logo" style="height:80px;"> &nbsp;&nbsp;<b style="font-size:xx-large;color:white">ACADÈMICA</b></a>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-12">
+                        <div class="main-menu">
+                            <a class="rs-menu-toggle"><i class="fa fa-bars"></i>Menu</a>
+                            <nav class="rs-menu">
+                                <ul class="nav-menu">
+                                    <!-- Home -->
+                                    <li class="menu-item-has-children">
+                                        <a href="@Url.Action("Index","Home")" class="home" style="font-weight:bold">Home</a>
+                                    </li>
+
+                                    <li class="menu-item-has-children">
+                                        <a href="@Url.Action("About","Home")" style="font-weight:bold">About Us</a>
+                                    </li>
+
+                                    <li class=" current-menu-item current_page_item menu-item-has-children">
+                                        <a href="@Url.Action("Faculty","Home")" style="font-weight:bold">Faculty List</a>
+                                    </li>
+
+                                    <li class="menu-item-has-children">
+                                        <a href="@Url.Action("Gallery","Home")" style="font-weight:bold">Gallery</a>
+
+                                    </li>
+
+                                    <li> <a href="@Url.Action("Contact","Home")" style="font-weight:bold">Contact</a></li>
+
+                                </ul>
+                            </nav>
+                            @*<div class="searce-box">
+                                    <a class="rs-search" data-target=".search-modal" data-toggle="modal" href="#"><i class="fa fa-search"></i></a>
+                                </div>*@
+                        </div>
+                        <div class="toggle-btn text-right">
+                            <span class="border-icon"></span>
+                            <span class="border-icon"></span>
+                            <span class="border-icon"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu End -->
+</header>
+
+<div class="rs-breadcrumbs bg7 breadcrumbs-overlay">
+    <div class="breadcrumbs-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h1 class="page-title">OUR Faculties</h1>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="rs-team-2" class="rs-team-2 team-page sec-spacer">
+    <div class="container">
+
+        @*<div class="gridFilter">
+            <button class="active" data-filter="*">ALL</button>
+            <button data-filter=".filter1">SCIENCE</button>
+            <button data-filter=".filter2">BUSINESS STUDIES</button>
+            <button data-filter=".filter3">ARTS</button>
+            <button data-filter=".filter4">DIPLOMA</button>
+        </div>*@
+
+        <div class="row grid">
+
+            @if (fac.Count()>0)
+            {
+                foreach (var i in fac)
+                {
+                    <div class="col-lg-3 col-md-6 col-xs-6 grid-item ">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <a href="#"><img src="@Global.WebsiteUrl()@i.Image" alt="" style="height:250px;" /></a>
+                                <div class="social-icon">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                   
+                                    <a href="#"><i class="fa fa-google"></i></a>
+                                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-body">
+                                <a href="#"><h3 class="name">@i.Name</h3></a>
+                                <span class="designation" style="font-weight:bold;color:#0094ff">@i.ExpertiesIn</span>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            }
+
+
+            else
+            {
+                <div class="col-lg-3 col-md-6 col-xs-6 grid-item ">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <a href="#"><img src="~/Design/images/teachers/2.jpg" alt="" /></a>
+                            <div class="social-icon">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-body">
+                            <a href="teachers-single.html"><h3 class="name">Mahabub Alam</h3></a>
+                            <span class="designation">Business Studies</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xs-6 grid-item ">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <a href="#"><img src="~/Design/images/teachers/3.jpg" alt="" /></a>
+                            <div class="social-icon">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-body">
+                            <a href="teachers-single.html"><h3 class="name">Jesika Helan</h3></a>
+                            <span class="designation">Arts</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xs-6 grid-item ">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <a href="#"><img src="~/Design/images/teachers/4.jpg" alt="" /></a>
+                            <div class="social-icon">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-body">
+                            <a href="teachers-single.html"><h3 class="name">Deluar Khan</h3></a>
+                            <span class="designation">Diploma</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xs-6 grid-item ">
+                    <div class="team-item">
+                        <div class="team-img">
+                            <a href="#"><img src="~/Design/images/teachers/5.jpg" alt="" /></a>
+                            <div class="social-icon">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-body">
+                            <a href="teachers-single.html"><h3 class="name">Alex Hilfisher</h3></a>
+                            <span class="designation">Science</span>
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+
+        </div>
+        @*<nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item disabled"><a class="page-link fa fa-angle-left" href="#" tabindex="-1"></a></li>
+                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link dotted" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">6</a></li>
+                    <li class="page-item"><a class="page-link fa fa-angle-right" href="#"></a></li>
+                </ul>
+            </nav>*@
+    </div>
+</div>

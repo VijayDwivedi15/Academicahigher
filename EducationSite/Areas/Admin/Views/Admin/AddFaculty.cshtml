@@ -1,0 +1,423 @@
+﻿@model EducationSite.Models.AddFaculty
+@using EducationSite.Models;
+
+@{
+    ViewBag.Title = "AddFaculty";
+}
+
+<div class="col-sm-12 col-md-12" style="margin-top:10px;margin-left:10px;">
+    <a href="@Url.Action("Index", "Admin", new { area="Admin"})" class="btn btn-info float-right btn-rounded"> Home</a>
+</div>
+
+<div class="content-wrapper">
+    <div class="col-12 grid-margin">
+        <center style="margin-top:20px;font-size:x-large;text-decoration:underline;color:#0094ff"><span><b>Add Faculty</b></span></center><br />
+        <div class="card">
+            <div class="card-body">
+
+
+                @using (Html.BeginForm("AddFaculty", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", id = "AddFaculty", role = "form", area = "Admin" }))
+                {
+                    <form class="form-sample">
+                        <div>
+                            <center> <input type="image" src="@ViewBag.Path" name="school" width="100" height="100" style="border-radius: 50%;border:2px solid purple" alt="faculty Img" id="Previewimage"></center><hr />
+
+                        </div>
+
+                        <br />
+                        <div class="row">
+                            @if (Model != null)
+                            {
+                                <input type="text" value="@Model.FacultyID" id="FacultyID" name="FacultyID" style="display:none" />
+
+                            }
+                            else
+                            {
+                                <input type="text" value="0" id="FacultyID" name="FacultyID" style="display:none" />
+                            }
+
+
+                            @if (Model != null)
+                            {
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Name</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="Name" name="Name" placeholder="Enter Faculty Name" required value="@Model.Name" />
+                                                   @*@Html.TextBoxFor(m => m.Name, new { @class = "form-control mb-2 mr-sm-2", @id = "Name", @placeholder = "Enter Faculty Name ", required = "" })*@
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Gender</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" id="Gender" name="Gender" required>
+                                                <option value="Not Select">--Select Gender--</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Age</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" id="Age" name="Age" placeholder="Enter Age" value="@Model.Age" required />
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Qualification</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control mb-2 mr-sm-2" id="Qualification" value="@Model.Qualification" name="Qualification" placeholder="Enter Qualification " required />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Experience</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control mb-2 mr-sm-2" id="Experience" value="@Model.Experience" name="Experience" placeholder="Enter Experience " required />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Subject Experties</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control mb-2 mr-sm-2" id="ExpertiesIn" value="@Model.ExpertiesIn" name="ExpertiesIn" placeholder="Enter Subject " required />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Mobile No.</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control mb-2 mr-sm-2" id="Mobile" name="Mobile" value="@Model.Mobile" placeholder="Enter Mobile No." maxlength="10" onkeypress="javascript:return isNumber(event)" required />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Email</label>
+                                        <div class="col-sm-8">
+                                            <input type="email" class="form-control mb-2 mr-sm-2" id="Email" name="Email" value="@Model.Email" placeholder="Enter Email " required />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Photo</label>
+                                        <div class="col-sm-8">
+                                            <input type="file" class="btn btn-default waves-effect form-control" required="" id="Image" name="Image" placeholder="Upload Image" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Address</label>
+                                        <div class="col-sm-8">
+                                            <textarea class="form-control" id="Address" name="Address" required placeholder="Enter Address">@Model.Address</textarea>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+                            else
+                            {
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Name</label>
+                                        <div class="col-sm-8">
+                                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control mb-2 mr-sm-2", @id = "Name", @placeholder = "Enter Faculty Name ", required = "" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Gender</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" id="Gender" name="Gender" required>
+                                                <option value="Not Select">--Select Gender--</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Age</label>
+                                        <div class="col-sm-8">
+                                            @Html.TextBoxFor(m => m.Age, new { @class = "form-control mb-2 mr-sm-2", @id = "Age", @placeholder = "Enter Age ", required = "" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Qualification</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control mb-2 mr-sm-2" id="Qualification" name="Qualification" placeholder="Enter Qualification " required />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Experience</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control mb-2 mr-sm-2" id="Experience" name="Experience" placeholder="Enter Experience " required />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Subject Experties</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control mb-2 mr-sm-2" id="ExpertiesIn" name="ExpertiesIn" placeholder="Enter Subject " required />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Mobile No.</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control mb-2 mr-sm-2" id="Mobile" name="Mobile" placeholder="Enter Mobile No." maxlength="10" onkeypress="javascript:return isNumber(event)" required />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Email</label>
+                                        <div class="col-sm-8">
+                                            <input type="email" class="form-control mb-2 mr-sm-2" id="Email" name="Email" placeholder="Enter Email " required />
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Photo</label>
+                                        <div class="col-sm-8" >
+                                            <input type="file"  class="btn btn-default waves-effect form-control" required="" id="Image" name="Image" placeholder="Upload Image" />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label" style="font-weight:bold">Address</label>
+                                        <div class="col-sm-8">
+                                            @Html.TextAreaFor(m => m.Address, new { @class = "form-control mb-2 mr-sm-2", @id = "Address", @placeholder = "Enter Address " })
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+
+
+
+
+
+
+                        </div>
+                        @if (Model != null)
+                        {
+                            <input type="text" id="imgdynamic" name="ImagSource" value="@Model.Image" style="display:none" />
+                        }
+                        else
+                        {
+                            <input type="text" id="imgdynamic" name="ImagSource" class="hidden" style="display:none" />
+
+                        }
+                        <center><button type="submit" class="btn btn-primary" id="btnsubmit" style="width:150px;">Submit</button></center>
+
+                        <br />
+
+
+
+                    </form>
+
+                }
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        function readURL(input) {
+            if(input.files&&input.files[0]) {
+                var reader=new FileReader();
+
+                reader.onload=function(e) {
+                    $('#Previewimage').attr('src',e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+
+
+        $('input[type="file"]').change(function(e) {
+            var fileName=e.target.files[0].name;
+            //document.getElementById('imgdynamic').value=fileName;
+            readURL(this);
+        });
+        //var tech = getUrlParameter('SaveStatus');
+        var tech=$("#SaveStatus").val();
+
+        if(tech=="Exists"||tech=="AllReadyUse") {
+            $.alert({
+                title: 'Sorry',
+                content: 'Data cannot be changed because already Exists',
+                confirmButton: 'OK',
+                confirmButtonClass: 'btn-info',
+                icon: 'icon-thumbs-down icon-2x ',
+                animation: 'zoom',
+                confirm: function() {
+                }
+            });
+        }
+        else
+            if(tech=="AllReadyUse") {
+                $.alert({
+                    title: 'Sorry',
+                    content: 'Data cannot be changed because reference already used',
+                    confirmButton: 'OK',
+                    confirmButtonClass: 'btn-info',
+                    icon: 'icon-thumbs-down icon-2x ',
+                    animation: 'zoom',
+                    confirm: function() {
+                    }
+                });
+            } else
+                if(tech=="Deleted") {
+                    $.alert({
+                        title: 'Cheers',
+                        content: 'Data deleted successfully',
+                        confirmButton: 'OK',
+                        confirmButtonClass: 'btn-info',
+                        icon: 'icon-thumbs-down icon-2x ',
+                        animation: 'zoom',
+                        confirm: function() {
+                        }
+                    });
+                } else
+                    if(tech=="Succeeded") {
+                        $.alert({
+                            title: 'Cheers',
+                            content: 'Data added successfully',
+                            confirmButton: 'OK',
+                            confirmButtonClass: 'btn-info',
+                            icon: 'icon-thumbs-down icon-2x ',
+                            animation: 'zoom',
+                            confirm: function() {
+                            }
+                        });
+                    } else
+                        if(tech=="Unsucceeded") {
+                            $.alert({
+                                title: 'Sorry',
+                                content: 'Data removed unsucceeded',
+                                confirmButton: 'OK',
+                                confirmButtonClass: 'btn-info',
+                                icon: 'icon-thumbs-down icon-2x ',
+                                animation: 'zoom',
+                                confirm: function() {
+                                }
+                            });
+                        }
+    });
+
+
+
+</script>
+
+
+<script>
+    // WRITE THE VALIDATION SCRIPT.
+    function isNumber(evt) {
+        var iKeyCode=(evt.which)?evt.which:evt.keyCode
+        if(iKeyCode!=46&&iKeyCode>31&&(iKeyCode<48||iKeyCode>57))
+            return false;
+
+        return true;
+    }
+</script>
+
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $("#Name").keypress(function(e) {
+            var keyCode=e.keyCode||e.which;
+
+            $("#lblError").html("");
+
+            //Regex for Valid Characters i.e. Alphabets and Numbers.
+            var regex=/^[A-Za-z\. ]+$/;
+
+            //Validate TextBox value against the Regex.
+            var isValid=regex.test(String.fromCharCode(keyCode));
+            if(!isValid) {
+                alert("Only Alphabets are allowed for Name.");
+                //$("#lblError").html("Only Alphabets are allowed for Name.");
+            }
+
+            return isValid;
+        });
+    });
+
+</script>

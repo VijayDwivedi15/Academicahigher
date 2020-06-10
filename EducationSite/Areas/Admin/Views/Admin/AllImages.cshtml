@@ -1,0 +1,114 @@
+﻿@using EducationSite.Models;
+@using EducationSite.DAL
+@{
+    ViewBag.Title = "AllImages";
+    List<Gallery> gallery = ViewData["Gallery"] as List<Gallery>;
+}
+
+
+
+<div class="col-sm-12 col-md-12" style="margin-top:10px;margin-left:10px;">
+    <a href="@Url.Action("Index", "Admin", new { area="Admin"})" class="btn btn-info float-right btn-rounded"> Home</a>
+</div>
+<div class="page-wrapper">
+    <div class="content">
+      
+        <div class="col-sm-12 col-12 text-right m-b-30" style="margin-top:10px;">
+            <a href="@Url.Action("AddGallery", "Admin", new { area = "Admin" })" class="btn btn-success btn-rounded"><i class="fa fa-plus"></i> Add Gallery</a>
+        </div>
+        <div class="row" style="margin-top:-20px;">
+            <div class="card">
+
+                <div class="card-body">
+
+                    <h4 class="" style="color:#481717;text-decoration:underline">All Images</h4>
+                    @if (gallery != null)
+                    {
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered" id="patientdata">
+                                <thead>
+                                    <tr style="background-color: #2ba5f6; color: white;">
+                                        <th style="padding: 5px;">
+                                            Title
+                                        </th>
+
+                                        <th style="padding: 5px;">
+                                            Image
+                                        </th>
+
+                                        <th style="padding: 5px;">
+                                            Action
+                                        </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (var i in gallery)
+                                    {
+                                        <tr>
+                                            <td style="padding:5px;color:#ff0000;">
+                                                @i.Title
+                                            </td>
+                                            <td style="padding:5px;text-align:center">
+                                                <img src="@Global.WebsiteUrl()~/UploadedImage/@i.Images" alt="Gallery Image" style="height:120px;width:250px;" />
+                                            </td>
+                                            
+
+                                            <td style="text-align:center">
+
+                                                
+                                                <a href="@Url.Action("DeleteImages", "Admin", new { GalleryID = i.GalleryID, area = "Admin" })" data-togg data-toggle="modal" data-target="#delete_patient" data-myvalue="@i.GalleryID" onclick="Setval('@i.GalleryID')"><i class="fa fa-trash-o m-r-5" title="Delete"></i></a>
+
+
+                                            </td>
+
+                                        </tr>
+                                    }
+
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+
+        <div id="delete_patient" class="modal fade delete-modal" role="dialog">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <input type="text" id="PatientDid" style="display:none" />
+                        <img src="assets/img/sent.png" alt="" width="50" height="46">
+                        <h3>Are you sure want to delete this Image?</h3>
+                        <div class="m-t-20">
+                            <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+                            <button type="submit" class="btn btn-danger" onclick="DeleteImages('')">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+@Html.Hidden("RedirectToDelete", Url.Action("DeleteGallery", "Admin", new { area = "Admin" }))
+<script>
+    function Setval(id) {
+        document.getElementById('PatientDid').value=id;
+    }
+
+    function DeleteImages() {
+        var GalleryID=$('#PatientDid').val();
+        var url=$("#RedirectToDelete").val()+"?GalleryID="+GalleryID;
+        location.href=url;
+    }
+
+</script>

@@ -1,0 +1,892 @@
+﻿@using EducationSite.Models;
+@using EducationSite.DAL
+@{
+    ViewBag.Title = "Home Page";
+    List<Notification> noti = ViewData["Notify"] as List<Notification>;
+    List<Notification> notification = ViewData["Notification"] as List<Notification>;
+
+
+}
+
+<header id="rs-header" class="rs-header ">
+
+    <!-- Menu Start -->
+    <div class="menu-area menu-sticky">
+        <div class="container">
+            <div class="main-menu">
+                <div class="row rs-vertical-middle">
+                    <div class="col-lg-5 col-md-12">
+                        <div class="logo-area">
+                            <a href="@Url.Action("Index","Home")"><img src="~/Design/image.png" alt="logo" style="height:80px;"> &nbsp;&nbsp;<b style="font-size:xx-large;color:white">ACADÈMICA</b></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-12">
+                        <div class="main-menu">
+                            <a class="rs-menu-toggle"><i class="fa fa-bars"></i>Menu</a>
+                            <nav class="rs-menu">
+                                <ul class="nav-menu">
+                                    <!-- Home -->
+                                    <li class="current-menu-item current_page_item menu-item-has-children">
+                                        <a href="@Url.Action("Index","Home")" style="font-weight:bold" class="home">Home</a>
+                                    </li>
+
+                                    <li class="menu-item-has-children">
+                                        <a href="@Url.Action("About","Home")" style="font-weight:bold">About Us</a>
+                                    </li>
+
+                                    <li class="menu-item-has-children">
+                                        <a href="@Url.Action("Faculty","Home")" style="font-weight:bold">Faculty List</a>
+                                    </li>
+
+                                    <li class="menu-item-has-children">
+                                        <a href="@Url.Action("Gallery","Home")" style="font-weight:bold">Gallery</a>
+
+                                    </li>
+
+                                    <li> <a href="@Url.Action("Contact","Home")" style="font-weight:bold">Contact</a></li>
+
+                                </ul>
+                            </nav>
+                            @*<div class="searce-box">
+                                    <a class="rs-search" data-target=".search-modal" data-toggle="modal" href="#"><i class="fa fa-search"></i></a>
+                                </div>*@
+                        </div>
+                        <div class="toggle-btn text-right">
+                            <span class="border-icon"></span>
+                            <span class="border-icon"></span>
+                            <span class="border-icon"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu End -->
+</header>
+
+<div id="rs-slider">
+    <div id="home-slider">
+        <!-- Item 1 -->
+        <div class="item active">
+            <img src="~/Design/images/slider/home3/slide1.jpg" alt="Slide1" />
+            <div class="slide-content">
+                <div class="display-table">
+                    <div class="display-table-cell">
+                        <div class="container text-right">
+                            <h1 class="slider-title" data-animation-in="fadeInUp" data-animation-out="animate-out">EDUCATION<br>NEED FOR BETTER LIFE</h1>
+                            <p data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">“Setting goals is the first step in turning the invisible into visible.”</p>
+                            @*<a href="#" class="sl-readmore-btn mr-30" data-animation-in="fadeInUp" data-animation-out="animate-out">READ MORE</a>
+                                <a href="#" class="sl-get-started-btn" data-animation-in="fadeInUp" data-animation-out="animate-out">GET STARTED NOW</a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="item">
+            <img src="~/Design/images/slider/home3/slide2.jpg" alt="Slide2" />
+            <div class="slide-content">
+                <div class="display-table">
+                    <div class="display-table-cell">
+                        <div class="container text-right">
+                            <h1 class="slider-title" data-animation-in="fadeInUp" data-animation-out="animate-out">ARE YOU READY TO Join?</h1>
+                            <p data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">To motivate and prepare young generation to achieve their goal.</p>
+                            @*<a href="#" class="sl-readmore-btn mr-30" data-animation-in="fadeInUp" data-animation-out="animate-out">READ MORE</a>
+                                <a href="#" class="sl-get-started-btn" data-animation-in="fadeInUp" data-animation-out="animate-out">GET STARTED NOW</a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="item">
+            <img src="~/Design/images/slider/home3/slide3.jpg" alt="Slide3" />
+            <div class="slide-content">
+                <div class="display-table">
+                    <div class="display-table-cell">
+                        <div class="container text-right">
+                            <h1 class="slider-title" data-animation-in="fadeInUp" data-animation-out="animate-out">Make Your Bright Career With ACADÈMICA</h1>
+                            <p data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">Enhancement in intellectual and analytical development of brain.</p>
+                            @*<a href="#" class="sl-readmore-btn mr-30" data-animation-in="fadeInUp" data-animation-out="animate-out">READ MORE</a>
+                                <a href="#" class="sl-get-started-btn" data-animation-in="fadeInUp" data-animation-out="animate-out">GET STARTED NOW</a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="rs-about" class="rs-about sec-spacer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="about-img rs-animation-hover">
+
+                    <img src="~/Design/academica1.jpg" alt="img02" />
+                    <a class="popup-youtube rs-animation-fade" href="https://www.youtube.com/watch?v=73FzCd1_e-0" title="Video Icon">
+                    </a>
+                    <div class="overly-border"></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="about-desc">
+                    <h2>WELCOME TO ACADÈMICA</h2>
+                    <p>Academica's mission is to motivate and prepare young generation to achieve their goal.</p>
+                </div>
+                <div id="accordion" class="rs-accordion-style1">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h3 class="acdn-title" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                About ACADÈMICA
+                            </h3>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <b>ACADÈMICA</b> higher education is best structured institution complete in all aspect known for the preparation of IIT-JEE(Mains and Advance), NEET+AIIMS, NTSE, Olympiads and other entrance exams such as IIT-JAM, JEST, TIFR for graduate students. Our aim is to enhance the ability to learn in analytical way.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h3 class="acdn-title collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Our Mission
+                            </h3>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                To motivate and prepare young generation to achieve their goal.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header mb-0" id="headingThree">
+                            <h3 class="acdn-title collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Our Vision
+                            </h3>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body">
+                                Enhancement in intellectual and analytical development of brain.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="rs-courses-2" class="rs-courses-2 sec-spacer sec-color">
+    <div class="container">
+        <div class="sec-title-2">
+            <h2 class="mb-30">OUR MAIN COURSES</h2>
+            @*<div class="view-more">
+                    <a href="#">View All Courses <i class="fa fa-angle-double-right"></i></a>
+                </div>*@
+        </div>
+        <div class="gridFilter">
+            <button class="active" data-filter="*">ALL</button>
+            <button data-filter=".filter1">Regular Course</button>
+            <button data-filter=".filter2">Dropper</button>
+            <button data-filter=".filter3">Graduate</button>
+
+        </div>
+        <div class="row grid">
+            <div class="col-lg-4 col-md-6 grid-item filter1 ">
+                <div class="cource-item">
+                    <div class="cource-img">
+                        <img src="~/Design/images/courses/4.jpg" alt="" />
+                        <a class="image-link" href="#" title="University Tour 2018">
+                            <i class="fa fa-link"></i>
+                        </a>
+                    </div>
+                    <div class="course-body">
+                        <a href="#" class="course-category">Regular</a>
+                        <h4 class="course-title"><a href="courses-details.html">Pre Foundation (6th, 7th, 8th) </a></h4>
+                        <div class="course-desc">
+                            <p>
+                                Enhancement in intellectual and analytical development of brain
+                            </p>
+                        </div>
+                        @*<a href="#" class="cource-btn">Apply Now</a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item filter1">
+                <div class="cource-item">
+                    <div class="cource-img">
+                        <img src="~/Design/images/courses/5.jpg" alt="" />
+                        <a class="image-link" href="#" title="University Tour 2018">
+                            <i class="fa fa-link"></i>
+                        </a>
+                    </div>
+                    <div class="course-body">
+                        <a href="#" class="course-category">Regular</a>
+                        <h4 class="course-title"><a href="courses-details.html">Foundation (9th, 10th)</a></h4>
+                        <div class="course-desc">
+                            <p>
+                                Enhancement in intellectual and analytical development of brain
+                            </p>
+                        </div>
+                        @*<a href="#" class="cource-btn">Apply Now</a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item filter1">
+                <div class="cource-item">
+                    <div class="cource-img">
+                        <img src="~/Design/images/courses/6.jpg" alt="" />
+                        <a class="image-link" href="#" title="University Tour 2018">
+                            <i class="fa fa-link"></i>
+                        </a>
+                    </div>
+                    <div class="course-body">
+                        <a href="#" class="course-category">Regular</a>
+                        <h4 class="course-title"><a href="#">JEE/NEET (11th, 12th)</a></h4>
+                        <div class="course-desc">
+                            <p>
+                                Enhancement in intellectual and analytical development of brain
+                            </p>
+                        </div>
+                        @*<a href="#" class="cource-btn">Apply Now</a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item filter3">
+                <div class="cource-item">
+                    <div class="cource-img">
+                        <img src="~/Design/images/courses/7.jpg" alt="" />
+                        <a class="image-link" href="#" title="University Tour 2018">
+                            <i class="fa fa-link"></i>
+                        </a>
+                    </div>
+                    <div class="course-body">
+                        <a href="#" class="course-category">Graduate</a>
+                        <h4 class="course-title"><a href="#">IIT-JAM (Physics)</a></h4>
+                        <div class="course-desc">
+                            <p>
+                                Enhancement in intellectual and analytical development of brain
+                            </p>
+                        </div>
+                        @*<a href="#" class="cource-btn">Apply Now</a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item filter2">
+                <div class="cource-item">
+                    <div class="cource-img">
+                        <img src="~/Design/images/courses/8.jpg" alt="" />
+                        <a class="image-link" href="#" title="University Tour 2018">
+                            <i class="fa fa-link"></i>
+                        </a>
+                    </div>
+                    <div class="course-body">
+                        <a href="#" class="course-category">Dropper</a>
+                        <h4 class="course-title"><a href="#">IIT-JEE (MAIN & ADVANCE)</a></h4>
+                        <div class="course-desc">
+                            <p>
+                                Enhancement in intellectual and analytical development of brain
+                            </p>
+                        </div>
+                        @*<a href="#" class="cource-btn">Apply Now</a>*@
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 grid-item filter2">
+                <div class="cource-item">
+                    <div class="cource-img">
+                        <img src="~/Design/images/courses/9.jpg" alt="" />
+                        <a class="image-link" href="#" title="University Tour 2018">
+                            <i class="fa fa-link"></i>
+                        </a>
+                    </div>
+                    <div class="course-body">
+                        <a href="#" class="course-category">Dropper</a>
+                        <h4 class="course-title"><a href="#">NEET-AIIMS</a></h4>
+                        <div class="course-desc">
+                            <p>
+                                Enhancement in intellectual and analytical development of brain
+                            </p>
+                        </div>
+                        @*<a href="#" class="cource-btn">Apply Now</a>*@
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 grid-item filter3">
+                <div class="cource-item">
+                    <div class="cource-img">
+                        <img src="~/Design/images/courses/7.jpg" alt="" />
+                        <a class="image-link" href="#" title="University Tour 2018">
+                            <i class="fa fa-link"></i>
+                        </a>
+                    </div>
+                    <div class="course-body">
+                        <a href="#" class="course-category">Graduate</a>
+                        <h4 class="course-title"><a href="#">JEST (Physics)</a></h4>
+                        <div class="course-desc">
+                            <p>
+                                Enhancement in intellectual and analytical development of brain
+                            </p>
+                        </div>
+                        @*<a href="#" class="cource-btn">Apply Now</a>*@
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 grid-item filter3">
+                <div class="cource-item">
+                    <div class="cource-img">
+                        <img src="~/Design/images/courses/7.jpg" alt="" />
+                        <a class="image-link" href="#" title="University Tour 2018">
+                            <i class="fa fa-link"></i>
+                        </a>
+                    </div>
+                    <div class="course-body">
+                        <a href="#" class="course-category">Graduate</a>
+                        <h4 class="course-title"><a href="#">TIFR (Physics)</a></h4>
+                        <div class="course-desc">
+                            <p>
+                                Enhancement in intellectual and analytical development of brain
+                            </p>
+                        </div>
+                        @*<a href="#" class="cource-btn">Apply Now</a>*@
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="rs-counter pt-100 pb-70 bg3">
+    <div class="container">
+        <div class="sec-title white-text mb-50 text-center">
+            <h2>ACHEIVEMENTS</h2>
+            <p>Our aim is to enhance the ability to learn in analytical way.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="rs-counter-list">
+                    <h2 class="counter-number plus">5</h2>
+                    <h4 class="counter-desc">TEACHERS</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="rs-counter-list">
+                    <h2 class="counter-number plus">8</h2>
+                    <h4 class="counter-desc">COURSES</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="rs-counter-list">
+                    <h2 class="counter-number plus">300</h2>
+                    <h4 class="counter-desc">STUDENTS</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="rs-counter-list">
+                    <h2 class="counter-number plus">145</h2>
+                    <h4 class="counter-desc">Satisfied Client</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="rs-courses-categories" class="rs-courses-categories pt-100 pb-70">
+    <div class="container">
+        <div class="sec-title-2 mb-50 text-right">
+            <h2>OUR TOPPER STUDENTS</h2>
+            <p>We believe that every student learns differently and we work towards helping them learn better.</p>
+            @*<div class="view-more">
+                    <a href="#">View All Courses <i class="fa fa-angle-double-right"></i></a>
+                </div>*@
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="courses-item">
+
+                    <img src="~/Design/stu2.jpeg" style="height:250px;" />
+                    <h4 class="courses-title">Akanksha Sahu</h4>
+                    <span class="courses-amount">95 % - PHYSICS</span>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="courses-item">
+                    <img src="~/Design/stu1.jpeg" style="height:250px;" />
+                    <h4 class="courses-title">Abha</h4>
+                    <span class="courses-amount">85 % - PHYSICS</span>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="courses-item">
+                    <img src="~/Design/stu3.jpeg" style="height:250px;" />
+                    <h4 class="courses-title">Lakshya Chandrakar</h4>
+                    <span class="courses-amount">88 % - PHYSICS</span>
+                </div>
+            </div>
+
+            @*<div class="col-lg-3 col-md-6">
+                    <div class="courses-item">
+                        <i class="flaticon-tool-2"></i>
+                        <h4 class="courses-title"><a href="#">BEHAVIORAL</a></h4>
+                        <span class="courses-amount">6 COURSES</span>
+                    </div>
+                </div>*@
+
+        </div>
+
+        @*<div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="courses-item">
+                        <i class="flaticon-ribbon"></i>
+                        <h4 class="courses-title"><a href="#">BIOLOGICAL</a></h4>
+                        <span class="courses-amount">8 COURSES</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="courses-item">
+                        <i class="flaticon-school-1"></i>
+                        <h4 class="courses-title"><a href="#">HUMANITIES</a></h4>
+                        <span class="courses-amount">4 COURSES</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="courses-item">
+                        <i class="flaticon-book"></i>
+                        <h4 class="courses-title"><a href="#">AGRICULTURAL</a></h4>
+                        <span class="courses-amount">7 COURSES</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="courses-item">
+                        <i class="flaticon-graduation"></i>
+                        <h4 class="courses-title"><a href="#">PSYCHOLOGICAL</a></h4>
+                        <span class="courses-amount">6 COURSES</span>
+                    </div>
+                </div>
+            </div>*@
+    </div>
+</div>
+
+
+
+<div id="rs-video" class="rs-video bg6">
+    <div class="container">
+        <div class="video-content">
+            <a class="popup-youtube" href="https://www.youtube.com/watch?v=3f9CAMoj3Ec" title="Video Icon">
+                <i class="fa fa-play"></i>
+            </a>
+            <span>TAKE A TOUR</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- Latest News Start -->
+<div id="rs-latest-news" class="rs-latest-news sec-spacer">
+    <div class="container">
+        <div class="sec-title-2 text-right mb-50">
+            <h2>OUR LASTEST NEWS</h2>
+            @*<p>Fusce sem dolor, interdum in efficitur at, faucibus nec lorem. Sed nec molestie justo.</p>*@
+            @*<div class="view-more">
+                    <a href="#">View All News <i class="fa fa-angle-double-right"></i></a>
+                </div>*@
+        </div>
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="news-normal-block">
+
+                    @*<div class="news-img" >
+                        
+                            <img src="~/Design/images/blog/6.jpg" alt="Notice" />
+                       
+                    </div>*@
+                  
+                    <div class="meta-content">
+                        <div id="marqueecontainer" onmouseover="copyspeed=pausespeed" onmouseout="copyspeed=marqueespeed">
+                            <div id="vmarquee" style="position: absolute; width: 98%;">
+
+                                @if (noti != null)
+                                {
+                                    foreach (var i in noti)
+                                    {
+                                        <p class="style38">
+                                            <img src="~/Design/newgif.gif" />&nbsp;&nbsp; <span style="text-align: justify; color:#ff3115;font-weight:bold"> @i.NotificationText</span>
+                                        </p>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <p class="style38">
+                                        <img src="~/Design/newgif.gif" />&nbsp;&nbsp; <a href="#" target="_blank"> No Notification </a>
+                                    </p>
+                                }
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="news-list-block">
+
+                    @if (notification != null)
+                    {
+                        foreach (var n in notification)
+                        {
+                            <div class="news-list-item">
+                                <div class="news-img">
+                                   
+                                        <img src="~/Design/images/blog/notice.jpeg" alt="Notice"  />
+                                   
+                                </div>
+                                <div class="news-content">
+                                    @*<h5 class="news-title"><a href="blog-details.html">While the lovely valley team work</a></h5>*@
+                                    <div class="news-date">
+                                        <i class="fa fa-calendar-check-o"></i>
+                                        <span style="font-weight:bold">@n.NotificationDate.ToShortDateString()</span>
+                                    </div>
+                                    <div class="news-desc">
+                                        <p style="text-align:justify">
+                                            @n.NotificationText
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                    else
+                    {
+                        <div class="news-list-item">
+                            <div class="news-img">
+                               
+                                    <img src="~/Design/images/blog/notice.jpeg" alt="" />
+                               
+                            </div>
+                            <div class="news-content">
+                                @*<h5 class="news-title"><a href="blog-details.html">While the lovely valley team work</a></h5>*@
+                                <div class="news-date">
+                                    <i class="fa fa-calendar-check-o"></i>
+                                    <span>June  28,  2017</span>
+                                </div>
+                                <div class="news-desc">
+                                    <p>
+                                        Excepteur sint occaecat cupidatat non proident,
+                                        sunt in culpa qui officia deserunt.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="news-list-item">
+                            <div class="news-img">
+                               
+                                    <img src="~/Design/images/blog/notice.jpeg" alt="" />
+                              
+                            </div>
+                            <div class="news-content">
+                                <h5 class="news-title"><a href="blog-details.html">I must explain to you how all this idea</a></h5>
+                                <div class="news-date">
+                                    <i class="fa fa-calendar-check-o"></i>
+                                    <span>June  28,  2017</span>
+                                </div>
+                                <div class="news-desc">
+                                    <p>
+                                        Excepteur sint occaecat cupidatat non proident,
+                                        sunt in culpa qui officia deserunt.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-list-item">
+                            <div class="news-img">
+                               
+                                    <img src="~/Design/images/blog/notice.jpeg" alt="" />
+
+                                
+                            </div>
+                            <div class="news-content">
+                                <h5 class="news-title"><a href="blog-details.html">I should be incapable of drawing a stroke</a></h5>
+                                <div class="news-date">
+                                    <i class="fa fa-calendar-check-o"></i>
+                                    <span>June  28,  2017</span>
+                                </div>
+                                <div class="news-desc">
+                                    <p>
+                                        Excepteur sint occaecat cupidatat non proident,
+                                        sunt in culpa qui officia deserunt.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="rs-testimonial-3" class="rs-testimonial-3 pt-100 pb-40 sec-color">
+    <div class="container">
+        <div class="sec-title-2">
+            <h2>WHAT OUR STUDENTS SAY</h2>
+            <p>Enhancement in intellectual and analytical development of brain.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="1200" data-dots="false" data-nav="true" data-nav-speed="false" data-mobile-device="1" data-mobile-device-nav="true" data-mobile-device-dots="false" data-ipad-device="2" data-ipad-device-nav="true" data-ipad-device-dots="false" data-md-device="3" data-md-device-nav="true" data-md-device-dots="false">
+
+                    <!-- Testimonial style3 Start -->
+                    <div class="testimonial-style3">
+                        <div class="image">
+                            <img src="~/Design/images/teacherdummy.png" alt="">
+                        </div>
+                        <h5 class="title">Adam Col</h5>
+                        <p class="description">To motivate and prepare young generation to achieve their goal.</p>
+                        <div class="testimonial-content">
+                            <div class="testimonial-profile">
+                                <h3 class="name">Aws Tech</h3>
+                                <span class="post">Designer</span>
+                            </div>
+                            <ul class="rating">
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star-half-empty"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Testimonial style3 End -->
+                    <!-- Testimonial style3 Start -->
+                    <div class="testimonial-style3">
+                        <div class="image">
+                            <img src="~/Design/images/teacherdummy.png" alt="">
+                        </div>
+                        <h5 class="title">Rakesh Pal</h5>
+                        <p class="description">To motivate and prepare young generation to achieve their goal.</p>
+                        <div class="testimonial-content">
+                            <div class="testimonial-profile">
+                                <h3 class="name">New Tech</h3>
+                                <span class="post">Designer</span>
+                            </div>
+                            <ul class="rating">
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star-half-empty"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Testimonial style3 End -->
+                    <!-- Testimonial style3 Start -->
+                    <div class="testimonial-style3">
+                        <div class="image">
+                            <img src="~/Design/images/teacherdummy.png" alt="">
+                        </div>
+                        <h5 class="title">Ravi Dhanowa</h5>
+                        <p class="description">To motivate and prepare young generation to achieve their goal.</p>
+                        <div class="testimonial-content">
+                            <div class="testimonial-profile">
+                                <h3 class="name">ASP Tech</h3>
+                                <span class="post">Designer</span>
+                            </div>
+                            <ul class="rating">
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star-half-empty"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Testimonial style3 End -->
+                    <!-- Testimonial style3 Start -->
+                    <div class="testimonial-style3">
+                        <div class="image">
+                            <img src="~/Design/images/teacherdummy.png" alt="">
+                        </div>
+                        <h5 class="title">Vikas Lal</h5>
+                        <p class="description">To motivate and prepare young generation to achieve their goal.</p>
+                        <div class="testimonial-content">
+                            <div class="testimonial-profile">
+                                <h3 class="name">Net Tech</h3>
+                                <span class="post">Designer</span>
+                            </div>
+                            <ul class="rating">
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star-half-empty"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Testimonial style3 End -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*<div id="rs-instagram" class="rs-instagram">
+        <div class="instagram-desc">
+            <h2 class="title">Instragram</h2>
+            <h2 class="sub-title">You Follow Us</h2>
+        </div>
+        <div class="rs-carousel owl-carousel" data-loop="true" data-items="4" data-margin="0" data-autoplay="true" data-autoplay-timeout="3000" data-smart-speed="1200" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="3" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="4" data-md-device-nav="false" data-md-device-dots="false">
+            <div class="instagram-item">
+                <a href="#">
+                    <img src="~/Design/images/instagram/1.jpg" alt="Instagram Image">
+                </a>
+            </div>
+            <div class="instagram-item">
+                <a href="#">
+                    <img src="~/Design/images/instagram/2.jpg" alt="Instagram Image">
+                </a>
+            </div>
+            <div class="instagram-item">
+                <a href="#">
+                    <img src="~/Design/images/instagram/3.jpg" alt="Instagram Image">
+                </a>
+            </div>
+            <div class="instagram-item">
+                <a href="#">
+                    <img src="~/Design/images/instagram/4.jpg" alt="Instagram Image">
+                </a>
+            </div>
+        </div>
+        <div class="rs-carousel owl-carousel" data-loop="true" data-items="4" data-margin="0" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="1200" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="3" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="4" data-md-device-nav="false" data-md-device-dots="false">
+            <div class="instagram-item">
+                <a href="#">
+                    <img src="~/Design/images/instagram/5.jpg" alt="Instagram Image">
+                </a>
+            </div>
+            <div class="instagram-item">
+                <a href="#">
+                    <img src="~/Design/images/instagram/6.jpg" alt="Instagram Image">
+                </a>
+            </div>
+            <div class="instagram-item">
+                <a href="#">
+                    <img src="~/Design/images/instagram/7.jpg" alt="Instagram Image">
+                </a>
+            </div>
+            <div class="instagram-item">
+                <a href="#">
+                    <img src="~/Design/images/instagram/8.jpg" alt="Instagram Image">
+                </a>
+            </div>
+        </div>
+    </div>*@
+
+
+
+@*<div id="rs-partner" class="rs-partner pt-70 pb-70">
+        <div class="container">
+            <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="80" data-autoplay="true" data-autoplay-timeout="5000" data-smart-speed="2000" data-dots="false" data-nav="false" data-nav-speed="false" data-mobile-device="2" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="4" data-ipad-device-nav="false" data-ipad-device-dots="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
+                <div class="partner-item">
+                    <a href="#"><img src="~/Design/images/partner/1.png" alt="Partner Image"></a>
+                </div>
+                <div class="partner-item">
+                    <a href="#"><img src="~/Design/images/partner/2.png" alt="Partner Image"></a>
+                </div>
+                <div class="partner-item">
+                    <a href="#"><img src="~/Design/images/partner/3.png" alt="Partner Image"></a>
+                </div>
+                <div class="partner-item">
+                    <a href="#"><img src="~/Design/images/partner/4.png" alt="Partner Image"></a>
+                </div>
+                <div class="partner-item">
+                    <a href="#"><img src="~/Design/images/partner/5.png" alt="Partner Image"></a>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+<style type="text/css">
+    #marqueecontainer {
+        position: relative;
+        width: 510px; /*marquee width */
+        height: 375px; /*marquee height  410px*/
+        background-color: white;
+        overflow: hidden;
+        border: 1px solid black;
+        padding: 2px;
+        padding-left: 4px;
+    }
+</style>
+
+
+
+<script type="text/javascript">
+
+    var delayb4scroll=1000 //Specify initial delay before marquee starts to scroll on page (2000=2 seconds)
+    var marqueespeed=1 //Specify marquee scroll speed (larger is faster 1-10)
+    var pauseit=1 //Pause marquee onMousever (0=no. 1=yes)?
+
+    ////NO NEED TO EDIT BELOW THIS LINE////////////
+
+    var copyspeed=marqueespeed
+    var pausespeed=(pauseit==0)?copyspeed:0
+    var actualheight=''
+
+    function scrollmarquee() {
+        if(parseInt(cross_marquee.style.top)>(actualheight*(-1)+8)) //if scroller hasn't reached the end of its height
+            cross_marquee.style.top=parseInt(cross_marquee.style.top)-copyspeed+"px" //move scroller upwards
+        else //else, reset to original position
+            cross_marquee.style.top=parseInt(marqueeheight)+8+"px"
+    }
+
+    function initializemarquee() {
+        cross_marquee=document.getElementById("vmarquee")
+        cross_marquee.style.top=0
+        marqueeheight=document.getElementById("marqueecontainer").offsetHeight
+        actualheight=cross_marquee.offsetHeight //height of marquee content (much of which is hidden from view)
+        if(window.opera||navigator.userAgent.indexOf("Netscape/7")!=-1) { //if Opera or Netscape 7x, add scrollbars to scroll and exit
+            cross_marquee.style.height=marqueeheight+"px"
+            cross_marquee.style.overflow="scroll"
+            return
+        }
+        setTimeout('lefttime=setInterval("scrollmarquee()",30)',delayb4scroll)
+    }
+
+    if(window.addEventListener)
+        window.addEventListener("load",initializemarquee,false)
+    else if(window.attachEvent)
+        window.attachEvent("onload",initializemarquee)
+    else if(document.getElementById)
+        window.onload=initializemarquee
+
+
+</script>
